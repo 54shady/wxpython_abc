@@ -21,12 +21,19 @@ class ExamplePanle(wx.Panel):
         self.insure = wx.CheckBox(self, label="What't your want:)", pos=(20, 180))
         self.Bind(wx.EVT_CHECKBOX, self.EvtCheckBox, self.insure)
 
+        # radio boxes
+        radioList = ['blue', 'red', 'yellow', 'orange', 'green', 'purple', 'navy blue', 'black', 'gray']
+        radioBox = wx.RadioBox(self, label="What color would u want:)", pos=(20, 210), choices=radioList, majorDimension=3, style=wx.RA_SPECIFY_COLS)
+        self.Bind(wx.EVT_RADIOBOX, self.EvtRadioBox, radioBox)
+
     def OnClick(self, event):
         self.logger.AppendText("Click on the object with Id %d\n" % event.GetId())
     def EvtText(self, event):
         self.logger.AppendText("EvtText %s\n" % event.GetString())
     def EvtCheckBox(self, event):
         self.logger.AppendText("EvtCheckBox %s\n" % event.Checked())
+    def EvtRadioBox(self, event):
+        self.logger.AppendText('EvtRadioBox : %d\n' % event.GetInt())
 
 app = wx.App(False)
 frame = wx.Frame(None)
