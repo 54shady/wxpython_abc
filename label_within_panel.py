@@ -17,10 +17,16 @@ class ExamplePanle(wx.Panel):
         self. editname = wx.TextCtrl(self, value="Enter here your name", pos=(150, 60), size=(140, -1))
         self.Bind(wx.EVT_TEXT, self.EvtText, self.editname)
 
+        # checkbox
+        self.insure = wx.CheckBox(self, label="What't your want:)", pos=(20, 180))
+        self.Bind(wx.EVT_CHECKBOX, self.EvtCheckBox, self.insure)
+
     def OnClick(self, event):
         self.logger.AppendText("Click on the object with Id %d\n" % event.GetId())
     def EvtText(self, event):
         self.logger.AppendText("EvtText %s\n" % event.GetString())
+    def EvtCheckBox(self, event):
+        self.logger.AppendText("EvtCheckBox %s\n" % event.Checked())
 
 app = wx.App(False)
 frame = wx.Frame(None)
