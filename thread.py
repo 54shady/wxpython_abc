@@ -19,6 +19,8 @@ class MyWorker(threading.Thread):
     def run(self):
         for i in range(10):
             print self.getName(), c.value
+            # pretend we're doing something that takes 10-100 ms
+            time.sleep(random.randint(10, 100) / 1000.0)
             c.increment()
 
 w = MyWorker()
