@@ -13,6 +13,14 @@ class MyFrame(wx.Frame):
         # add a sizer
         mySizer = wx.BoxSizer(wx.VERTICAL)
         mySizer.Add(self.myTextCtrl, 0, wx.EXPAND | wx.TOP | wx.BOTTOM)
+        # add a grid sizer
+        gs = wx.GridSizer()
+        gs.AddMany([
+            (wx.Button(self, 20, 'Cls'), 0, wx.EXPAND)
+            ])
+
+        mySizer.Add(gs, 1, wx.EXPAND)
+
         self.SetSizer(mySizer)
 
 
