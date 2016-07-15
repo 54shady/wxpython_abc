@@ -26,7 +26,12 @@ class MyMenu(wx.Frame):
         # set the menubar to the frame
         self.SetMenuBar(menubar)
 
-app = wx.App(False)
-frame = MyMenu(None, wx.ID_ANY, "menu1.py")
-frame.Show(True)
+class MyApp(wx.App):
+    def OnInit(self):
+        frame = MyMenu(None, wx.ID_ANY, "menu1.py")
+        frame.SetIcon(wx.Icon('icon.ico', wx.BITMAP_TYPE_ICON))
+        frame.Show(True)
+        return True
+
+app = MyApp(False)
 app.MainLoop()
