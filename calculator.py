@@ -14,9 +14,30 @@ class MyFrame(wx.Frame):
         mySizer = wx.BoxSizer(wx.VERTICAL)
         mySizer.Add(self.myTextCtrl, 0, wx.EXPAND | wx.TOP | wx.BOTTOM)
         # add a grid sizer
-        gs = wx.GridSizer()
+        rows = 4
+        cols = 5
+        gs = wx.GridSizer(rows, cols)
         gs.AddMany([
-            (wx.Button(self, 20, 'Cls'), 0, wx.EXPAND)
+            (wx.Button(self, -1, 'A'), 0, wx.EXPAND),
+            (wx.Button(self, -1, 'B'), 0, wx.EXPAND),
+            (wx.Button(self, -1, 'C'), 0, wx.EXPAND),
+            (wx.Button(self, -1, 'D'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '1'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '2'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '3'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '4'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '5'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '6'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '7'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '8'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '9'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '10'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '11'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '12'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '13'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '14'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '15'), 0, wx.EXPAND),
+            (wx.Button(self, -1, '16'), 0, wx.EXPAND)
             ])
 
         mySizer.Add(gs, 1, wx.EXPAND)
